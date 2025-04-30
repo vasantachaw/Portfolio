@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portfolio | Vasant Chaw</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+	{% load static %}
+
+	<link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	
+	<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+	
+	<link rel="stylesheet" href="{% static 'css/aos.css' %}">
+	
+	<link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+	
+	<link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+	<link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html"><span>{{ developer.name|slice:":1" }}
+		</span>{{ developer.name|slice:"1:" }}
+	</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+	          <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
+	         
+	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	  <section class="hero-wrap js-fullheight">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text js-fullheight justify-content-center align-items-center">
+          <div class="col-lg-8 col-md-6 ftco-animate d-flex align-items-center">
+          	<div class="text text-center">
+          		<span class="subheading">Hey! I am</span>
+		  				<h1>{{developer.name | capfirst }}</h1>
+			  				<h2>I'm a 
+								<h2>
+									<span
+									  class="txt-rotate"
+									  data-period="2000"
+									  data-rotate='{{ skills|safe }}'>
+									</span>
+								  </h2>
+								  
+								  
+								  
+							</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mouse">
+				<a href="#" class="mouse-icon">
+					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
+				</a>
+			</div>
+    </section>
+
+    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+    	<div class="container">
+    		<div class="row d-flex no-gutters">
+    			<div class="col-md-6 col-lg-6 d-flex">
+    				<div class="img-about img d-flex align-items-stretch">
+    					<div class="overlay"></div>
+	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url('{% static 'images/pic.jpg' %}');">
+	    				</div>
+    				</div>
+    			</div>
+    			<div class="col-md-6 col-lg-6 pl-md-5 py-5">
+    				<div class="row justify-content-start pb-3">
+		          <div class="col-md-12 heading-section ftco-animate">
+					<h1 class="big">About</h1>
+					<h2 class="mb-4">About Me</h2>
+					<p>I’m a passionate developer with hands-on experience in web development, machine learning, and data analysis. I enjoy turning ideas into real-world applications, continuously learning, and delivering solutions that add value.</p>
+					<ul class="about-info mt-4 px-md-0 px-2">
+		            	<li class="d-flex"><span>Name :</span> <span>{{developer.name}}</span></li>
+		            	
+		            	<li class="d-flex"><span>Address :</span> <span>{{developer.address}}</span></li>
+		            	<li class="d-flex"><span>Zip code :</span> <span>{{developer.zip_code}}</span></li>
+		            	<li class="d-flex"><span>Email :</span> <span>{{developer.email}}</span></li>
+		            	<li class="d-flex"><span>Phone : </span> <span>{{developer.phone_number}}</span></li>
+		            </ul>
+		          </div>
+		        </div>
+	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
+              <div class="text">
+              	<p class="mb-4">
+	                <span class="number" data-number="120">0</span>
+	                <span>Project complete</span>
+                </p>
+                <p><a href="{{ developer.resume.url }}" class="btn btn-primary py-3 px-3" download>Download CV</a>
+				</p>
+              </div>
+	          </div>
+	        </div>
+        </div>
+    	</div>
+    </section>
+
+  
+
+    <section class="ftco-section ftco-no-pb goto-here" id="resume-section">
+    	<div class="container">
+    		<div class="row">
+    			<div class="col-md-3">
+				    <nav id="navi">
+					    <ul>
+					      <li><a href="#page-1">Education</a></li>
+					      <li><a href="#page-2">Experience</a></li>
+					      <li><a href="#page-3">Skills</a></li>
+					      <li><a href="#page-4">Companys</a></li>
+					    </ul>
+					  </nav>
+					</div>
+					<div class="col-md-9">
+					  <div id="page-1" class= "page one">
+					  	<h2 class="heading">Education</h2>
+					    <div class="resume-wrap d-flex ftco-animate">
+					    	<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">2007-20017</span>
+		    					<h2>Pre-Secondary + Secondary Education</h2>
+		    					<span class="position">Viswa Niketan Secondary School Tripureswor,Kathmandu</span>
+		    					<p>I have completed my education from Class 1 to Class 10, which includes both pre-secondary and secondary levels. These years helped me build a strong foundation in academics and personal growth.</p>
+	    					</div>
+	    				</div>
+	    				<div class="resume-wrap d-flex ftco-animate">
+	    					<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">2017-2019</span>
+		    					<h2>+2 | Higher Secondary</h2>
+		    					<span class="position">St.Xavier's Maitighar,kathmandu</span>
+		    					<p>Completed my Higher Secondary Education (+2 level) from 2017 to 2019, where I built a strong academic foundation and developed critical thinking and subject-specific skills in  Science + Computer </p>
+		    				</div>
+	    				</div>
+	    				<div class="resume-wrap d-flex ftco-animate">
+	    					<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">2019-2023</span>
+		    					<h2>Diploma in Computer Engineering With Scholarship </h2>
+								<span class="position">CTEVT</span>
+								<p>Completed with a scholarship Companyed for academic excellence and technical aptitude.</p></div>
+	    				</div>
+	    				
+					  </div>
+
+					  <div id="page-2" class= "page two">
+					  	<h2 class="heading">Experience</h2>
+					    <div class="resume-wrap d-flex ftco-animate">
+					    	<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">2 Years</span>
+		    					<h2>Machine Learning </h2>
+		    					<span class="position">Technology</span>
+		    					<p>I have practical experience in Machine Learning, working on real-world projects involving data preprocessing, model training, and evaluation using algorithms such as regression, classification, and clustering. I’ve used tools like Python, Scikit-learn, and Pandas to build and analyze models.</p>
+		    				</div>
+	    				</div>
+	    				<div class="resume-wrap d-flex ftco-animate">
+	    					<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">2 Years</span>
+		    					<h2>Web Development | Django</h2>
+		    					<span class="position">Technology</span>
+		    					<p>I have hands-on experience in web development using Django, where I’ve built dynamic, database-driven websites and applications. My work includes designing models, creating RESTful APIs, managing user authentication, and integrating frontend templates. I’m comfortable working with Django’s admin interface, ORM, and deployment tools.</p>
+		    				</div>
+	    				</div>
+	    				<div class="resume-wrap d-flex ftco-animate">
+	    					<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">1 Years</span>
+		    					<h2>Computer Vision</h2>
+		    					<span class="position">Technology</span>
+		    					<p>I have experience in Computer Vision, working on projects involving image processing, object detection, and facial recognition. I’ve used tools like OpenCV and Python to develop applications that analyze and interpret visual data, including tasks such as edge detection, feature extraction, and image classification.</p>
+		    				</div>
+	    				</div>
+	    				
+	    				<div class="resume-wrap d-flex ftco-animate">
+	    					<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">1 Years</span>
+		    					<h2>Github | Git</h2>
+		    					<span class="position">Project Hub</span>
+		    					<p>I have practical experience using Git for version control and GitHub for collaboration and code management. I'm confident in creating repositories, managing branches, handling pull requests, and resolving merge conflicts, which has helped me work effectively in team-based development projects.</p>
+		    				</div>
+	    				</div>
+	    				<div class="resume-wrap d-flex ftco-animate">
+	    					<div class="icon d-flex align-items-center justify-content-center">
+					    		<span class="flaticon-ideas"></span>
+					    	</div>
+					    	<div class="text pl-3">
+		    					<span class="date">3/2 Years </span>
+		    					<h2>EDA</h2>
+		    					<span class="position">Data Analysis</span>
+		    					<p>I have experience performing Exploratory Data Analysis (EDA) using Python libraries such as Pandas, Matplotlib, and Seaborn. I’ve worked on cleaning, visualizing, and interpreting datasets to uncover patterns, trends, and insights that support data-driven decision-making.</p>
+		    				</div>
+	    				</div>
+					  </div>
+					  <div id="page-3" class= "page three">
+					  	<h2 class="heading">Skills</h2>
+					  	<div class="row progress-circle mb-5">
+					  		<div class="col-lg-4 mb-4">
+						      <div class="bg-white rounded-lg shadow p-4">
+						        <h2 class="h5 font-weight-bold text-center mb-4">Backend Django</h2>
+
+						        <!-- Progress bar 1 -->
+						        <div class="progress mx-auto" data-value='90'>
+						          <span class="progress-left">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <span class="progress-right">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						            <div class="h2 font-weight-bold">90<sup class="small">%</sup></div>
+						          </div>
+						        </div>
+						        <!-- END -->
+
+						        <!-- Demo info -->
+						        <div class="row text-center mt-4">
+						          <div class="col-6 border-right">
+						            <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last week</span>
+						          </div>
+						          <div class="col-6">
+						            <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last month</span>
+						          </div>
+						        </div>
+						        <!-- END -->
+						      </div>
+						    </div>
+
+						    <div class="col-lg-4 mb-4">
+						      <div class="bg-white rounded-lg shadow p-4">
+						        <h2 class="h5 font-weight-bold text-center mb-4">Machine Learning</h2>
+
+						        <!-- Progress bar 1 -->
+						        <div class="progress mx-auto" data-value='80'>
+						          <span class="progress-left">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <span class="progress-right">
+                        <span class="progress-bar border-primary"></span>
+						          </span>
+						          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						            <div class="h2 font-weight-bold">80<sup class="small">%</sup></div>
+						          </div>
+						        </div>
+						        <!-- END -->
+
+						        <!-- Demo info -->
+						        <div class="row text-center mt-4">
+						          <div class="col-6 border-right">
+						            <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last week</span>
+						          </div>
+						          <div class="col-6">
+						            <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last month</span>
+						          </div>
+						        </div>
+						        <!-- END -->
+						      </div>
+						    </div>
+
+						    <div class="col-lg-4 mb-4">
+						      <div class="bg-white rounded-lg shadow p-4">
+						        <h2 class="h5 font-weight-bold text-center mb-4">Frontend </h2>
+
+						        <!-- Progress bar 1 -->
+						        <div class="progress mx-auto" data-value='75'>
+						          <span class="progress-left">
+									<span class="progress-bar border-primary"></span>
+											</span>
+											<span class="progress-right">
+									<span class="progress-bar border-primary"></span>
+											</span>
+						          <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+						            <div class="h2 font-weight-bold">75<sup class="small">%</sup></div>
+						          </div>
+						        </div>
+						        <!-- END -->
+
+						        <!-- Demo info -->
+						        <div class="row text-center mt-4">
+						          <div class="col-6 border-right">
+						            <div class="h4 font-weight-bold mb-0">28%</div><span class="small text-gray">Last week</span>
+						          </div>
+						          <div class="col-6">
+						            <div class="h4 font-weight-bold mb-0">60%</div><span class="small text-gray">Last month</span>
+						          </div>
+						        </div>
+						        <!-- END -->
+						      </div>
+						    </div>
+					  	</div>
+					  	<div class="row">
+					  		<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>Python</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="90"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
+										    <span>90%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>HTML,CSS,JAVASCRIPT</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="85"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
+										    <span>85%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>EDA | Data Analysis</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="95"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:95%">
+										    <span>95%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>Database | Mysql,mongoDb</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="90"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
+										    <span>90%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>Problem Solving</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="70"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
+										    <span>70%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-md-6 animate-box">
+									<div class="progress-wrap ftco-animate">
+										<h3>Support Team</h3>
+										<div class="progress">
+										 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="80"
+										  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
+										    <span>80%</span>
+										  	</div>
+										</div>
+									</div>
+								</div>
+					  	</div>
+					  </div>
+					  <div id="page-4" class= "page four">
+					    <h2 class="heading">Companys</h2>
+					    <div class="resume-wrap d-flex ftco-animate">
+							<div class="icon d-flex align-items-center justify-content-center">
+								<span class="flaticon-ideas"></span>
+							</div>
+							<div class="text pl-3">
+								<span class="date">{{ company.established_date }}</span>
+								<h2>{{ company.name }} Company</h2>
+								<span class="position">{{ company.industry_type }}</span>
+								<p>{{ company.description }}</p>
+							</div>
+						</div>
+						
+					  </div>
+					</div>
+			  </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section" id="services-section">
+    	<div class="container-fluid px-md-5">
+    		<div class="row justify-content-center py-5 mt-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Services</h1>
+		<h2 class="mb-4">Services</h2>
+		<p>I provide reliable and efficient solutions in Python development, tailored to your needs — from web applications to automation and data processing.</p>
+
+          </div>
+        </div>
+    		<div class="row">
+					<div class="col-md-4 text-center d-flex ftco-animate">
+						<a href="#" class="services-1 shadow">
+							<span class="icon">
+								<i class="flaticon-analysis"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5">Web Development</h3>
+								<p>I offer professional web development services, creating responsive, user-friendly websites using modern technologies like HTML, CSS, JavaScript, and Django. My services include full-stack development, custom feature integration, database design, and deployment, tailored to meet client needs and business goals.</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 text-center d-flex ftco-animate">
+						<a href="#" class="services-1 shadow">
+							<span class="icon">
+								<i class="flaticon-flasks"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5">Data Analysis</h3>
+								<p>I have hands-on experience in Data Analysis, using tools like Python, Pandas, and Excel to clean, organize, and interpret data. I’ve worked on uncovering insights through statistical analysis and data visualization, helping to inform decisions and identify trends.</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 text-center d-flex ftco-animate">
+						<a href="#" class="services-1 shadow">
+							<span class="icon">
+								<i class="flaticon-ideas"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5">Business Model Bulding</h3>
+								<p>I have experience in building business models enhanced by AI-driven predictions. This includes identifying key performance metrics, integrating machine learning algorithms to forecast trends or customer behavior, and using data insights to support strategic decision-making. I’ve used tools like Python, Scikit-learn, and Pandas to develop predictive models tailored to business goals.</p>
+							</div>
+						</a>
+					</div>
+
+					<div class="col-md-4 text-center d-flex ftco-animate">
+						<a href="#" class="services-1 shadow">
+							<span class="icon">
+								<i class="flaticon-innovation"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5">App Developing</h3>
+								<p>I have experience in app development, creating user-friendly and functional applications with a focus on performance, usability, and design. I’ve worked on both frontend and backend components, using tools and frameworks like Django, Flutter, or React Native, depending on the project requirements.</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 text-center d-flex ftco-animate">
+						<a href="#" class="services-1 shadow">
+							<span class="icon">
+								<i class="flaticon-ux-design"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5">Web Hosting Service</h3>
+								<p>I provide web hosting services to ensure that websites are live, secure, and accessible online. This includes setting up domains, managing hosting environments, deploying web applications, configuring servers, and ensuring uptime and performance. I’m experienced with platforms like Heroku, Vercel, Netlify, and cPanel-based hosting.</p>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-4 text-center d-flex ftco-animate">
+						<a href="#" class="services-1 shadow">
+							<span class="icon">
+								<i class="flaticon-idea"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5">Product Strategy</h3>
+								<p>I have experience in shaping product strategy by identifying market needs, analyzing user feedback, and aligning development efforts with business goals. I focus on defining clear product visions, setting measurable objectives, and collaborating with cross-functional teams to ensure successful product planning, development, and delivery.</p>
+							</div>
+						</a>
+					</div>
+				</div>
+    	</div>
+    </section>
+ 
+
+
+
+    
+
+    <section class="ftco-section ftco-hireme img" style="background-image: url('{% static "images/bg_1.jpg" %}')">
+    	<div class="overlay"></div>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>I'm <span>Available</span> for Freelancing</h2>
+<p>I’m open to freelance opportunities where I can apply my skills in web development, AI, and data analysis to deliver quality solutions tailored to client needs.</p>
+<p class="mb-0"><a href="#contact" class="btn btn-primary py-3 px-5">Hire Me</a></p>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+    <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Contact</h1>
+            <h2 class="mb-4">Contact Me</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-map-signs"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Address</h3>
+		            <p>{{developer.address}}</p>
+		          </div>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-phone2"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Contact Number</h3>
+		            <p><a href="tel">+977 - {{developer.phone_number}}</a></p>
+	            </div>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-paper-plane"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Email Address</h3>
+		            <p><a href="mailto:vasantachaw@gmail.com">{{developer.email}}</a></p>
+		          </div>
+	          </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+          	<div class="align-self-stretch box text-center p-4 shadow">
+          		<div class="icon d-flex align-items-center justify-content-center">
+          			<span class="icon-globe"></span>
+          		</div>
+          		<div>
+	          		<h3 class="mb-4">Website</h3>
+		            <p><a href="#">www.xyz.com</a></p>
+	            </div>
+	          </div>
+          </div>
+        </div>
+
+        <div class="row no-gutters block-9">
+          <div class="col-md-6 order-md-last d-flex">
+            <form action="{% url 'contact' %}" method="post" class="bg-light p-4 p-md-5 contact-form">
+				{% csrf_token %}
+				<div class="form-group">
+					<input type="text" name="name" class="form-control" placeholder="Your Name">
+				</div>
+				<div class="form-group">
+					<input type="text" name="email" class="form-control" placeholder="Your Email">
+				</div>
+				<div class="form-group">
+					<input type="tel" name="phone" class="form-control" placeholder="Phone Number">
+				</div>
+				<div class="form-group">
+					<input type="text" name="subject" class="form-control" placeholder="Subject">
+				</div>
+				<div class="form-group">
+					<textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+				</div>
+			</form>
+			
+          
+          </div>
+
+          <div class="col-md-6 d-flex">
+          	<div class="img" style="background-image: url('{% static 'images/picccs.jpg' %}');"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About</h2>
+              <p>
+				Python developer, always learning.
+				Let me know if you want to add a specific skill or focus area.</p>
+				<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+					<li class="ftco-animate">
+						<a href="https://www.linkedin.com/in/vasantachaw/" target="_blank">
+							<span class="icon-linkedin"></span>
+						</a>
+					</li>
+					<li class="ftco-animate">
+						<a href="https://github.com/vasantachaw" target="_blank">
+							<span class="icon-github"></span>
+						</a>
+					</li>
+					<li class="ftco-animate">
+						<a href="https://www.facebook.com/yourusername" target="_blank">
+							<span class="icon-facebook"></span>
+						</a>
+					</li>
+					<li class="ftco-animate">
+						<a href="https://gaulley.pythonanywhere.com/" target="_blank">
+							<span class="icon-briefcase"></span>
+						</a>
+					</li>
+				</ul>
+				
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#home-section"><span class="icon-long-arrow-right mr-2"></span>Home</a></li>
+                <li><a href="#about-section"><span class="icon-long-arrow-right mr-2"></span>About</a></li>
+                <li><a href="#resume-section"><span class="icon-long-arrow-right mr-2"></span>Resume</a></li>
+                <li><a href="#contact-section"><span class="icon-long-arrow-right mr-2"></span>Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+             <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Services</h2>
+              <ul class="list-unstyled">
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Development</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>App Development</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Business Model Buillding AI</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Data Analysis</a></li>
+                <li><a href="#"><span class="icon-long-arrow-right mr-2"></span>Web Hosting Service</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">{{developer.address}}</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+977-{{developer.phone_number}}</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">{{developer.email}}</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  
+  </body>
+</html>
