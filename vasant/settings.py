@@ -122,9 +122,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # for collectstatic (optional)
-STATICFILES_DIRS = [
-    BASE_DIR / 'vasant' / 'static',
-]
+
 # Media files (uploads like images, PDFs)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
